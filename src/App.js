@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Kundali from "./pages/Kundali";
+import Vastu from "./pages/Vastu";
+import Matching from "./pages/Matching";
+import Muhurat from "./pages/Muhurat";
+import Gemstone from "./pages/Gemstone";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/kundali" element={<Kundali />} />
+        <Route path="/vastu" element={<Vastu />} />
+        <Route path="/matching" element={<Matching />} />
+        <Route path="/muhurat" element={<Muhurat />} />
+        <Route path="/gemstone" element={<Gemstone />} />
+      </Routes>
+    </Router>
   );
 }
 
