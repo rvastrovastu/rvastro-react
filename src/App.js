@@ -1,33 +1,22 @@
+// App.js
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-
-const Kundali = () => (
-  <div style={{ padding: "100px", textAlign: "center" }}>
-    <h2>Kundali Page</h2>
-  </div>
-);
-
-const Panchang = () => (
-  <div style={{ padding: "100px", textAlign: "center" }}>
-    <h2>Panchang Page</h2>
-  </div>
-);
-
-const Horoscope = () => (
-  <div style={{ padding: "100px", textAlign: "center" }}>
-    <h2>Daily Horoscope Page</h2>
-  </div>
-);
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/kundali" element={<Kundali />} />
-      <Route path="/panchang" element={<Panchang />} />
-      <Route path="/horoscope" element={<Horoscope />} />
-    </Routes>
+    <HashRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* Add other routes here */}
+      </Routes>
+    </HashRouter>
   );
 }
 
