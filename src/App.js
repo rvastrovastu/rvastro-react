@@ -1,26 +1,33 @@
-// src/App.js
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Kundali from "./pages/Kundali";
-import Vastu from "./pages/Vastu";
-import Matching from "./pages/Matching";
-import Muhurat from "./pages/Muhurat";
-import Gemstone from "./pages/Gemstone";
+
+const Kundali = () => (
+  <div style={{ padding: "100px", textAlign: "center" }}>
+    <h2>Kundali Page</h2>
+  </div>
+);
+
+const Panchang = () => (
+  <div style={{ padding: "100px", textAlign: "center" }}>
+    <h2>Panchang Page</h2>
+  </div>
+);
+
+const Horoscope = () => (
+  <div style={{ padding: "100px", textAlign: "center" }}>
+    <h2>Daily Horoscope Page</h2>
+  </div>
+);
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/kundali" element={<Kundali />} />
-        <Route path="/vastu" element={<Vastu />} />
-        <Route path="/matching" element={<Matching />} />
-        <Route path="/muhurat" element={<Muhurat />} />
-        <Route path="/gemstone" element={<Gemstone />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/kundali" element={<Kundali />} />
+      <Route path="/panchang" element={<Panchang />} />
+      <Route path="/horoscope" element={<Horoscope />} />
+    </Routes>
   );
 }
 

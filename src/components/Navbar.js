@@ -1,17 +1,42 @@
-// src/components/Navbar.js
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav style={{padding:"20px", background:"#2c0b3f"}}>
-      <Link style={{margin:"10px", color:"white"}} to="/">Home</Link>
-      <Link style={{margin:"10px", color:"white"}} to="/kundali">Kundali</Link>
-      <Link style={{margin:"10px", color:"white"}} to="/vastu">Vastu</Link>
-      <Link style={{margin:"10px", color:"white"}} to="/matching">Matching</Link>
-      <Link style={{margin:"10px", color:"white"}} to="/muhurat">Muhurat</Link>
-      <Link style={{margin:"10px", color:"white"}} to="/gemstone">Gemstone</Link>
+    <nav style={styles.nav}>
+      <div style={styles.logo}>🔮 RVAstroVastu</div>
+
+      <div style={styles.hamburger} onClick={() => setOpen(!open)}>
+        ☰
+      </div>
+
+      <div style={{ ...styles.links, display: open ? "flex" : "" }}>
+        <Link to="/">Home</Link>
+        <Link to="/kundali">Kundali</Link>
+        <Link to="/panchang">Panchang</Link>
+        <Link to="/horoscope">Horoscope</Link>
+      </div>
     </nav>
   );
 }
 
-export default Navbar;
+const styles = {
+  nav: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "15px",
+    background: "#0b0f1a",
+    color: "#fff",
+    position: "sticky",
+    top: 0
+  },
+  logo: { fontWeight: "bold" },
+  hamburger: { display: "block", cursor: "pointer" },
+  links: {
+    display: "none",
+    flexDirection: "column",
+    gap: "10px"
+  }
+};
