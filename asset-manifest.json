@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/rvastrovastu/static/css/main.63e35d81.css",
+    "main.js": "/rvastrovastu/static/js/main.52eb824b.js",
+    "static/media/logo.png": "/rvastrovastu/static/media/logo.f70d5b97392a7f303986.png",
+    "index.html": "/rvastrovastu/index.html",
+    "main.63e35d81.css.map": "/rvastrovastu/static/css/main.63e35d81.css.map",
+    "main.52eb824b.js.map": "/rvastrovastu/static/js/main.52eb824b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63e35d81.css",
+    "static/js/main.52eb824b.js"
+  ]
+}
